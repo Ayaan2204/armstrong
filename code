@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+    //VARIABLES
+    int input;
+    int digits=0;
+    int a;
+    int i;
+    int b;
+    int sum=0;
+    int j;
+    int x;
+    //INPUT
+    printf("ENTER NUMBER \n");
+    scanf("%d",&input);
+    //OBTAIN NUMBER OF DIGITS
+    a=input;
+    while(a>0)
+    {
+        a=a/10;
+        digits++;
+    }
+    
+    //EXTRACT DIGITS AND POWER AND ADD
+    a=input;
+    for(i=0;i<digits;i++)
+    {
+        
+        b=a%10;
+        x=b;
+       
+        for(j=1;j<digits;j++)
+        {
+            x=x*b;
+        }
+        printf("x=%d\n",x);
+        
+        sum=sum+x;
+        
+        a=a/10;
+    }
+    //CHECK
+    if(sum==input)
+    {
+        printf("Armstrong");
+    }
+    else
+    {
+        printf("Not armstrong");
+    }
+}
